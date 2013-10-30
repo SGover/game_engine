@@ -11,7 +11,7 @@ class game():
         self.surf=pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
         self.lost=False
         self.spatials=spatials
-        self.inputHandler=baseHandler
+        self.inputHandler=baseHandler()
     def run(self):
         while True :
             if lost:
