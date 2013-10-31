@@ -14,9 +14,10 @@ class game():
         for x in states.values():
             x.setSurface(self.surf)
     def run(self):
-        self.currState.run(self.fpsClock,FPS)
-    def changeState(self,stateName):        
-        self.currState.stop()
-        self.currState=self.states[stateName]
-        self.currState.run(self.fpsClock,FPS)
+        while True:
+            self.currState.run(self.fpsClock,FPS)
+    def changeState(self,stateName):
+        if not self.states[stateName].isRunning:
+            self.currState.stop()            
+            self.currState=self.states[stateName]            
 
