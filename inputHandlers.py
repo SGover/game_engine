@@ -4,12 +4,12 @@ from pygame.locals import *
 
 class baseHandler:
     def __init__(self):
-        pass
+        pass    
     def handle_input(self,event):
             if event.type== QUIT :
                 pygame.quit()
                 sys.exit()
-            elif event.type == KEYDOWN:
+            elif event.type == KEYDOWN:                
                 if (event.key == K_LEFT or event.key == K_a) :
                     doLeftAction()
                 elif (event.key == K_RIGHT or event.key == K_d):
@@ -28,6 +28,16 @@ class baseHandler:
         pass    
 
 
-
-    
+class keyDownHandler:    
+    def __init__(self,key_down_list):
+        self.key_down_list=key_down_list
+    def handle_input(self,event):
+            if event.type== QUIT :
+                pygame.quit()
+                sys.exit()
+            elif event.type == KEYDOWN:
+                for key_d in self.key_down_list:
+                    if event.key == key_d[0]:
+                        key_d[1]()
+         
     
