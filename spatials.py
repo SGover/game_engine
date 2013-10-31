@@ -47,5 +47,20 @@ class dynSpatial(spatial):
             self.v=(0,0)
             self.a=(0,0)
 
+
+class button():
+    def __init__(self,rect,text,textSize,action):
+        self.rect=rect
+        self.text=text
+        self.textSize=textSize
+        self.action=action
+        self.focus=false        
+    def activate():
+        action()
+    def draw(surface):
+        pass
+    def isOnButton(point):
+        return self.rect.collidepoint(point)
         
+                    
 
