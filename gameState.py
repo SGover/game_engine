@@ -10,10 +10,12 @@ class gameState():
         self.inputHandler=handler
         self.isRunning=False
         self.color=color
-        self.surf=pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+        
+    def setSurface(self,surf):
+        self.surf=surf
     def run(self,fpsClock,FPS):
         self.isRunning=True
-        while True :            
+        while self.isRunning:            
             self.background_draw()
             for event in pygame.event.get():
                 self.inputHandler.handle_input(event)            
