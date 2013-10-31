@@ -19,19 +19,29 @@ class spatial():
         return True
     def update(self):
         pass
+    def getX(self):
+        return self.rect.centerx
+    def getY(self):
+        return self.rect.centery
+    def moveTo(self,point):
+        self.rect=self.rect.move(point)
 class dynSpatial(spatial):    
         def __init__(self,rect,z, color):
             spatial.__init__(self,rect,z,color)            
             self.v=(0,0)
             self.a=(0,0)            
-            controls=[]
-        def addControl(control):
+            self.controls=[]
+        def addControl(self,control):
             control.setSpatial(self)
-            controls.append(control)
+            self.controls.append(control)
         def update(self):
-            self.v+=a*interval
+            if not (self.a[0]==0 and self.a[1]==0):
+                newVx=self.v[0]+self.a[0]*time_interval
+                newVy=self.v[1]+self.a[1]*time_interval
+                self.v=(newVx,newVy)            
             self.rect.x+=self.v[0]*time_interval
-            for control in controls:
+            self.rect.y+=self.v[1]*time_interval
+            for control in self.controls:
                 control.update()
         def stop(self):
             self.v=(0,0)
