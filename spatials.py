@@ -11,10 +11,10 @@ class spatial():
         self.color = color
     def draw(self, surf):
         pygame.draw.rect(surf, self.color, self.rect, 0)
-    def on_screen( minX, maxX, minY, maxY):
-        if rect.right<minX or rect.left>maxX :
+    def on_screen(self, minX, maxX, minY, maxY):
+        if self.rect.right<minX or self.rect.left>maxX :
             return False
-        if rect.top<minY or rect.bottom>maxY :
+        if self.rect.top<minY or self.rect.bottom>maxY :
             return False
         return True
     def update(self):
@@ -54,12 +54,12 @@ class button():
         self.text=text
         self.textSize=textSize
         self.action=action
-        self.focus=false        
+        self.focus=False        
     def activate():
-        action()
-    def draw(surface):
+        action()    #not defined?
+    def draw(self,surface):
         pass
-    def isOnButton(point):
+    def isOnButton(self, point):
         return self.rect.collidepoint(point)
         
                     
