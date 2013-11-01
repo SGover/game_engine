@@ -17,6 +17,7 @@ def changeState2():
 
 x=20
 y=30
+
 spatials=[]
 rect=pygame.Rect(x,y,20,20)
 mySpatial=dynSpatial(rect,2,BLUE)
