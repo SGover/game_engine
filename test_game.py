@@ -5,12 +5,7 @@ from inputHandlers import keyDownHandler
 from pygame.locals import *
 from controls import *
 from gameState import gameState
-
 import pygame
-
-x=20
-y=30
-spatials=[]
 
 
 def moveBy_s():
@@ -19,6 +14,10 @@ def changeState():
     mygame.changeState('1')
 def changeState2():
     mygame.changeState('2')
+
+x=20
+y=30
+spatials=[]
 rect=pygame.Rect(x,y,20,20)
 mySpatial=dynSpatial(rect,2,BLUE)
 mySpatial.addControl(repControl((200,200),(140,140),70))
